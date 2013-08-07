@@ -46,3 +46,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 #simple_form
 gem 'simple_form'
 gem 'bootstrap-sass'
+

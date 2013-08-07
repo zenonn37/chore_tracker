@@ -4,23 +4,27 @@ class ChoresController < ApplicationController
   	render('list')
   end
 
+
   def list
   	@chores = Chore.all
   end
+
 
   def new
   	@chores = Chore.new
   end
 
+
   def create
-  	@chores = Chore.new(params[:chores])
+  	@chores = Chore.new(params[:chores].permit(:name,:summary))
 
   		if @chores.save
-
+         redirect_to chores_path
   		else
 
-
+         redirect_to new_path
   		end
+
   end
 
   def show
@@ -33,8 +37,11 @@ class ChoresController < ApplicationController
 
   	@chores = Chore.find(params[:id])
   	if @chores.update_attributes(params[:chores])
+        redirect_to root_path 
   	else
-  		redirect_to list_path
+  		redirect_to edit_path
   	end
+
   end
+
 end

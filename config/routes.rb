@@ -1,5 +1,8 @@
 ChoreTracker::Application.routes.draw do
-  get "chores/index"
+  resources :chores
+  root to: 'chores#index'
+
+  get 'chore_list', to: 'chores#index', as: :chore_list
   get "chores/list"
   get "chores/new"
   get "chores/show"
