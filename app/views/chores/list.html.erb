@@ -1,2 +1,22 @@
-<h1>Chores#list</h1>
-<p>Find me in app/views/chores/list.html.erb</p>
+<div class="row">
+
+	<div class="col-lg-8 list_chores">
+
+		<h2>Chore Listings</h2>
+
+		<%@chore.each do |chore|%>
+
+		   <p><%=chore.name%></p>
+
+		      <p><%=chore.summary%></p>
+
+
+           <%end%>
+	</div>
+
+
+	<div class="col-lg-4 list_users">
+
+		<h2>Users</h2>
+		</div>
+</div>

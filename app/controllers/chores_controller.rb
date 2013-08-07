@@ -6,23 +6,23 @@ class ChoresController < ApplicationController
 
 
   def list
-  	@chores = Chore.all
+  	@chore = Chore.all
   end
 
 
   def new
-  	@chores = Chore.new
+  	@chore = Chore.new
   end
 
 
   def create
-  	@chores = Chore.new(params[:chores].permit(:name,:summary))
+  	@chore = Chore.new(params[:chore].permit(:name,:summary))
 
-  		if @chores.save
+  		if @chore.save
          redirect_to chores_path
   		else
 
-         redirect_to new_path
+         redirect_to chores_path
   		end
 
   end
