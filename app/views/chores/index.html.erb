@@ -1,16 +1,17 @@
 <div class="row">
 
-	<div class="span8">
+	<div class="span12">
 
 		<h2>Chore Listings</h2>
 
-		<table>
+		<table class="table">
            <thead>
            <tr>
+           	<th>User</th>
              <th>Chore</th>
              <th>Created At</th>
               <th>Instructions</th>
-               <th>Notes</th>
+             
                 <th>Active</th>
                 
 
@@ -22,10 +23,11 @@
 
            	<tr>
            		<%@chore.each do |chore|%>
+           		<td>User Name</td>
              <td><%=chore.name%></td>
-                <td><%=chore.created_at%></td>
+                <td><%=time_ago_in_words(chore.created_at)%></td>
                    <td><%=chore.summary%></td>
-                      <td><%=chore.notes%></td>
+                   
                          <%if chore.active%>
                          <td>Chore is not completed!</td>
                          <%else%>
@@ -33,10 +35,10 @@
                          <%end%>
 
 
-              <%end%>
-
+             
 
            	</tr>
+              <%end%>
 
 
            </tbody>
@@ -45,20 +47,9 @@
 
 		</table>
 
-		<%@chore.each do |chore|%>
-
-		   <p><%=chore.name%></p>
-
-		      <p><%=chore.summary%></p>
-
-
-           <%end%>
-           <%=link_to "Add new Chore", new_chore_path%>
+	
 	</div>
 
 
-	<div class="span4">
-
-		<h2>Users</h2>
-		</div>
+	
 </div>

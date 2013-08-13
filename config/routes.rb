@@ -1,7 +1,9 @@
 ChoreTracker::Application.routes.draw do
-  get "users/index"
-  get "users/new"
+  #get "users/index"
+  #get "users/new"
   resources :chores
+  resources :users
+
   root to: 'chores#index'
 
   #get 'chore_list', to: 'chores#index', as: :chore_list
