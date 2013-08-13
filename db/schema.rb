@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130803162957) do
+ActiveRecord::Schema.define(version: 20130813200539) do
 
   create_table "chores", force: true do |t|
     t.integer  "user_id"
@@ -24,5 +24,13 @@ ActiveRecord::Schema.define(version: 20130803162957) do
   end
 
   add_index "chores", ["name"], name: "index_chores_on_name"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.integer  "hours_worked"
+    t.boolean  "paid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

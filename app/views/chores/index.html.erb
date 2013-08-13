@@ -1,2 +1,64 @@
-<h1>Chores#index</h1>
-<p>Find me in app/views/chores/index.html.erb</p>
+<div class="row">
+
+	<div class="span8">
+
+		<h2>Chore Listings</h2>
+
+		<table>
+           <thead>
+           <tr>
+             <th>Chore</th>
+             <th>Created At</th>
+              <th>Instructions</th>
+               <th>Notes</th>
+                <th>Active</th>
+                
+
+           </tr>
+
+           </thead>
+
+           <tbody>
+
+           	<tr>
+           		<%@chore.each do |chore|%>
+             <td><%=chore.name%></td>
+                <td><%=chore.created_at%></td>
+                   <td><%=chore.summary%></td>
+                      <td><%=chore.notes%></td>
+                         <%if chore.active%>
+                         <td>Chore is not completed!</td>
+                         <%else%>
+                         <td>Chore is completed!</td>
+                         <%end%>
+
+
+              <%end%>
+
+
+           	</tr>
+
+
+           </tbody>
+
+
+
+		</table>
+
+		<%@chore.each do |chore|%>
+
+		   <p><%=chore.name%></p>
+
+		      <p><%=chore.summary%></p>
+
+
+           <%end%>
+           <%=link_to "Add new Chore", new_chore_path%>
+	</div>
+
+
+	<div class="span4">
+
+		<h2>Users</h2>
+		</div>
+</div>

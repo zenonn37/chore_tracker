@@ -4,6 +4,6 @@ class Chore < ActiveRecord::Base
 	                  length: {minimum:3}
 
 	validates :summary, presence: true,
-	                    length: {minimum:100}
+	                    length: {minimum:5}
 	
 end

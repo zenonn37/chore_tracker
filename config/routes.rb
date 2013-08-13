@@ -1,11 +1,13 @@
 ChoreTracker::Application.routes.draw do
+  get "users/index"
+  get "users/new"
   resources :chores
   root to: 'chores#index'
 
-  get 'chore_list', to: 'chores#index', as: :chore_list
-  get "chores/list"
-  get "chores/new"
-  get "chores/show"
+  #get 'chore_list', to: 'chores#index', as: :chore_list
+  #get "chores/list"
+  #get "chores/new"
+  #get "chores/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
