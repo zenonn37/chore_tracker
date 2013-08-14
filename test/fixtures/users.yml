@@ -1,11 +1,8 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+chris:
+  name: chris
   hours_worked: 1
-  paid: false
+  is_paid: false
 
-two:
-  name: MyString
-  hours_worked: 1
-  paid: false
+

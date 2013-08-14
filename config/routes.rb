@@ -4,8 +4,11 @@ ChoreTracker::Application.routes.draw do
   #get "users/new"
   resources :chores
   resources :users
+  resources :profiles
 
   root to: 'chores#index'
+
+  get '/:id', to: 'profiles#show'
 
   #get 'chore_list', to: 'chores#index', as: :chore_list
   #get "chores/list"
