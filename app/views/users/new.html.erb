@@ -4,12 +4,16 @@
 
 		<h1>Enter Users</h1>
 
-		<%= simple_form_for :chore, url: chores_path do |f|%>
+		<%= simple_form_for :user, url: users_path do |f|%>
 
 
 		<%=f.input :name%>
 
-		<%=f.input :submit%>
+		<%=f.input :hours_worked%>
+
+		<%=f.input :is_paid, as: :boolean%>
+
+		<%=f.button :submit%>
 
 		<%end%>
 

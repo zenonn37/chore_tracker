@@ -16,6 +16,8 @@ class ChoresController < ApplicationController
 
 
   def create
+    #params[:chore].inspect
+    
   	@chore = Chore.new(chore_params)
 
   		if @chore.save
@@ -24,6 +26,7 @@ class ChoresController < ApplicationController
 
          render 'new'
   		end
+
 
   end
 
@@ -49,7 +52,7 @@ class ChoresController < ApplicationController
   end
 
   private
-  
+
   def chore_params
     params.require(:chore).permit(:name,:summary)
   end

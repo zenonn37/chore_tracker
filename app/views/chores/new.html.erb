@@ -4,6 +4,7 @@
      
      <%=simple_form_for :chore, url:chores_path  do |f|%>
 
+     <%=f.input :user_id, collection: User.all%>
      <%=f.input :name%>
      <%=f.input :summary%>
      <%=f.button :submit%>
