@@ -16,7 +16,7 @@ class ChoresController < ApplicationController
 
 
   def create
-    #params[:chore].inspect
+    #render text: params[:user].inspect
     
   	@chore = Chore.new(chore_params)
 
@@ -54,7 +54,7 @@ class ChoresController < ApplicationController
   private
 
   def chore_params
-    params.require(:chore).permit(:name,:summary)
+    params.require(:chore).permit(:name,:summary,:user_id)
   end
 
 end

@@ -23,7 +23,7 @@
 
            	<tr>
            		<%@chore.each do |chore|%>
-           		<td>User Name</td>
+           		<td><%=chore.user.name%></td>
              <td><%=chore.name%></td>
                 <td><%=time_ago_in_words(chore.created_at)%></td>
                    <td><%=chore.summary%></td>
@@ -42,6 +42,10 @@
 
 
            </tbody>
+           <tfoot>
+           <tr><%=link_to "+ Add New Chore", new_chore_path%></tr>
+           </tfoot>
+         
 
 
 
