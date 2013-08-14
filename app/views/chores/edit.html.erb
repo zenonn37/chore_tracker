@@ -1,0 +1,29 @@
+<div class="row">
+
+	<div class="col-lg-8 newForm">
+     
+     <%=simple_form_for :chore, url:chores_path  do |f|%>
+
+     <%=f.input :user_id, collection: User.all%>
+     <%=f.input :name%>
+     <%=f.input :summary%>
+     <%=f.button :submit%>
+     
+     <%end%>
+
+	</div>
+
+	<div class="col-lg-4">
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+</div>

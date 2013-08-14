@@ -1,4 +1,5 @@
 ChoreTracker::Application.routes.draw do
+  get "profiles/show"
   #get "users/index"
   #get "users/new"
   resources :chores

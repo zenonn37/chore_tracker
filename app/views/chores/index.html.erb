@@ -32,7 +32,11 @@
                          <td>Chore is not completed!</td>
                          <%else%>
                          <td>Chore is completed!</td>
+                        
                          <%end%>
+
+                          <td><%=link_to "Edit",edit_chore_path(chore)%>| |<%=link_to "Delete", chore_path(chore),
+                                                                            method: :delete, data:{confirm: "Are you sure"}%></td>
 
 
              

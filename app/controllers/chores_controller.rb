@@ -37,19 +37,27 @@ class ChoresController < ApplicationController
   def destroy
      @chore = Chore.find(params[:id])
      @chore.destroy
-     redirect_to root_path
+     redirect_to chores_path
+  end
+
+  def edit
+
+    @chore = Chore.find(params[:id])
+    
   end
 
   def update
 
-  	@chores = Chore.find(params[:id])
-  	if @chores.update_attributes(chore_params)
-        redirect_to root_path 
+  	@chore = Chore.find(params[:id])
+  	if @chores.update(chore_params)
+        redirect_to chores_path 
   	else
-  		redirect_to edit_path
+  		redirect_to edit_chores_path
   	end
 
   end
+
+ 
 
   private
 
