@@ -4,7 +4,7 @@
 	<div class="span12">
 
 
-
+      <h2><%=link_to "+Add New User", new_user_path%></h2>
      <table class="table">
 
      	<tr>
@@ -27,6 +27,9 @@
         <%else%>
         <td>No</td>
         <%end%>
+
+        <td><%=link_to "Edit User", edit_user_path(user)%>| |<%=link_to "Delete User", user_path(user),
+                                                               method: :delete, data:{confirm:"Are You Sure!"}%></td>
       </tr>
 
       <%end%>
