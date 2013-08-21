@@ -1,12 +1,28 @@
 class ChoresController < ApplicationController
   def index
 
-  	   @chore = Chore.all
+  	   #@chore = Chore.all
+       #@chore = Chore.where(name:'Bathroom')
+       #@chore = Chore.find_by()
+       #@chore = Chore.find_by("created_at < ?", 2.days.ago)
+       #Post.where.not(author:author)
+       #User.order(:name,created_at: :desc)
+       @chore = Chore.order(created_at: :desc)
+       #Post.includes(:comments).
+          #where("comments.name='foo'").references(:comments)
+          #Post.includes(:comments).where(comments:{ name: 'foo'})
+          #Post.includes(:comments).where('comments.name'=>'foo')
+          #Post.includes(:comments).order('comments.name')
+
+
   end
 
 
   def list
     @chore = Chore.all
+    #if params[:recent]
+      #@tweets = tweets.recent
+     # end
   end
 
 
@@ -17,6 +33,8 @@ class ChoresController < ApplicationController
 
   def create
     #render text: params[:user].inspect
+    #Chore.find_or_initialize_by()
+     #Chore.find_or_create_by()
     
   	@chore = Chore.new(chore_params)
 
@@ -50,6 +68,7 @@ class ChoresController < ApplicationController
 
   	@chore = Chore.find(params[:id])
   	if @chores.update(chore_params)
+      #@chores.update_columns(chore_params)
         redirect_to chores_path 
   	else
   		redirect_to edit_chores_path

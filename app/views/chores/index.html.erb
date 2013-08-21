@@ -1,6 +1,6 @@
 <div class="row">
 
-	<div class="span12 well">
+	<div class="span8 well">
 
 		<h2>Chore Listings</h2>
 
@@ -23,7 +23,7 @@
 
            	<tr>
            		<%@chore.each do |chore|%>
-           		<td><%=chore.user.name%></td>
+           		<td><%=link_to chore.user.name, chore_path(chore.user)%></td>
              <td><%=chore.name%></td>
                 <td><%=time_ago_in_words(chore.created_at)%></td>
                    <td><%=chore.summary%></td>
@@ -57,6 +57,18 @@
 
 	
 	</div>
+
+  <div class ="span3 well">
+   <ul class="nav nav-list">
+
+     <li class="nav-header">CMS</li>
+     <li class="active"><%=link_to "Home",chores_path%></li>
+       <li><%=link_to "Add Chore",new_chore_path%></li>
+
+   </ul>
+
+
+  </div>
 
 
 	

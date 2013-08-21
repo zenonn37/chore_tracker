@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	public
   def index
   	@user = User.all
+
   end
 
   def new
