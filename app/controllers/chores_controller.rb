@@ -1,5 +1,30 @@
 class ChoresController < ApplicationController
+
+
+
+   #before_filter :get_tweet, only: [:edit, :update, :destroy]
+   #before_filter :check_auth, only:[:edit, :update, :destroy]
+   before_filter :get_chores, only:[:edit,:update,:destroy]
+
+       # def get_tweet
+         #@tweet = Tweet.find(params[:id])
+       # end
+
+       #def check_auth
+          #if session[:zombie_id] !=@tweet.zombie_id
+    #flash[:notice] = "Sorry,you cant edit this tweet"
+    #redirect_to(chores_path)
+       #end
+
+       private
+
+       def get_chores
+        @chore = Chore.find(params[:id])
+       end
+
+       public
   def index
+       
 
   	   #@chore = Chore.all
        #@chore = Chore.where(name:'Bathroom')
@@ -50,6 +75,11 @@ class ChoresController < ApplicationController
 
   def show
     @chore = Chore.find(params[:id])
+    respond_to do |format|
+      format.html #show html.erb
+      format.xml { render xml: @chore}
+      format.json {render json: @chore}
+    end
   end
 
   def destroy
@@ -61,6 +91,7 @@ class ChoresController < ApplicationController
   def edit
 
     @chore = Chore.find(params[:id])
+   
     
   end
 

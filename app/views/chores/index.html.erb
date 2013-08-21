@@ -23,8 +23,9 @@
 
            	<tr>
            		<%@chore.each do |chore|%>
-           		<td><%=link_to chore.user.name, chore_path(chore.user)%></td>
-             <td><%=chore.name%></td>
+           		<td><%=link_to chore.user.name, chore.user%></td>
+             <td><%=link_to chore.name, chore
+             %></td>
                 <td><%=time_ago_in_words(chore.created_at)%></td>
                    <td><%=chore.summary%></td>
                    
@@ -54,6 +55,10 @@
 
 
 		</table>
+
+    <%if @chore.empty?%>
+      <em>No Chore Found</em>
+    <%end%>
 
 	
 	</div>
